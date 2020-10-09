@@ -4,13 +4,6 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.util.CellRangeAddress;
-
-/**
- * 微妞分布式平台-公用工具包
- *
- * @author 广州加叁信息科技有限公司 (tiger@microsoul.com)
- * @version V1.0.0
- */
 public class POITools {
 
     public static int getRow(int index, int cols) {
