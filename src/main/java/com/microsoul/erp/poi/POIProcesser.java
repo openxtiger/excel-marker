@@ -673,7 +673,6 @@ public class POIProcesser {
             } else if (r instanceof Number) {
                 if (dvars.length > 2 && ((Number) r).doubleValue() == GlobalHelper.parseDouble(dvars[2], 0)) {
                     style = 0;
-                    b.append("");
                 } else {
                     int sc = GlobalHelper.parseInt(dvars[1], 0);
                     if (sc == 0) {
@@ -688,7 +687,6 @@ public class POIProcesser {
             } else {
                 if (dvars.length > 2 && r == null) {
                     style = 0;
-                    b.append("");
                 }
             }
         }
