@@ -4,6 +4,11 @@ import com.microsoul.erp.commons.GlobalHelper;
 import com.microsoul.erp.poi.hssf.HSSFPOIHelper;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellReference;
+import org.krysalis.barcode4j.HumanReadablePlacement;
+import org.krysalis.barcode4j.impl.code128.Code128Bean;
+import org.krysalis.barcode4j.impl.code128.EAN128Bean;
+import org.krysalis.barcode4j.output.bitmap.BitmapCanvasProvider;
+import org.krysalis.barcode4j.tools.UnitConv;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -334,7 +339,7 @@ public class POIProcesser {
                         name = getValue(obj, name);
 
                         if (name == null || name.equals("")) continue;
-                        //createBarcode(c, name);
+                        createBarcode(c, name);
                         continue;
                     } else if (name.startsWith("&")) {
                         name = name.substring(1);
@@ -706,14 +711,14 @@ public class POIProcesser {
         return null;
     }
 
-    /*private void createBarcode(POIVar c, String name) {
+    private void createBarcode(POIVar c, String name) {
 
         String[] fun = c.getStrings();
-        *//*if (fun.length >= 2) {
+        /*if (fun.length >= 2) {
             code.setBarHeight(com.microsoul.weapi.util.WeosoGlobals.parseDouble(fun[1], 0));
         } else {
             code.setBarHeight(10);
-        }*//*
+        }*/
 
         ByteArrayOutputStream byteArrayOut = new ByteArrayOutputStream();
         final int dpi = 150;
@@ -755,7 +760,7 @@ public class POIProcesser {
         }
 
 
-    }*/
+    }
 
 
     private void createPicture(POIVar c, byte[] bytes, int width, int height,
